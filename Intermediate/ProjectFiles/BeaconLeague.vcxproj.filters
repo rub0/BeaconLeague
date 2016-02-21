@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<ItemGroup>
+		<None Include="..\..\BeaconLeague.uproject" />
+		<Filter Include="Source">
+			<UniqueIdentifier>{238A13F3-F1F2-4016-AD00-C838DEC4A4F8}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\BeaconLeague.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<None Include="..\..\Source\BeaconLeagueEditor.Target.cs">
+			<Filter>Source</Filter>
+		</None >
+		<Filter Include="Config">
+			<UniqueIdentifier>{C6715171-2EB0-4075-AD2B-967FD5C33A5F}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Config\DefaultEditor.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultEngine.ini">
+			<Filter>Config</Filter>
+		</None >
+		<None Include="..\..\Config\DefaultGame.ini">
+			<Filter>Config</Filter>
+		</None >
+		<Filter Include="Source\BeaconLeague">
+			<UniqueIdentifier>{D96C0057-8321-4956-B1F3-8CF2DB822989}</UniqueIdentifier>
+		</Filter>
+		<None Include="..\..\Source\BeaconLeague\BeaconLeague.Build.cs">
+			<Filter>Source\BeaconLeague</Filter>
+		</None >
+		<ClCompile Include="..\..\Source\BeaconLeague\BeaconLeague.cpp">
+			<Filter>Source\BeaconLeague</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\BeaconLeague\BeaconLeague.h">
+			<Filter>Source\BeaconLeague</Filter>
+		</ClInclude >
+		<ClCompile Include="..\..\Source\BeaconLeague\BeaconLeagueGameMode.cpp">
+			<Filter>Source\BeaconLeague</Filter>
+		</ClCompile >
+		<ClInclude Include="..\..\Source\BeaconLeague\BeaconLeagueGameMode.h">
+			<Filter>Source\BeaconLeague</Filter>
+		</ClInclude >
+	</ItemGroup>
+</Project>
