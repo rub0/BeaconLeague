@@ -9,17 +9,101 @@
 #include "BeaconLeague.generated.dep.h"
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeBeaconLeague() {}
+	void ABall::StaticRegisterNativesABall()
+	{
+	}
+	IMPLEMENT_CLASS(ABall, 2059231853);
+	void ABeacon::StaticRegisterNativesABeacon()
+	{
+	}
+	IMPLEMENT_CLASS(ABeacon, 876542410);
 	void ABeaconLeagueGameMode::StaticRegisterNativesABeaconLeagueGameMode()
 	{
 	}
 	IMPLEMENT_CLASS(ABeaconLeagueGameMode, 914483303);
+	void ASceneCamera::StaticRegisterNativesASceneCamera()
+	{
+	}
+	IMPLEMENT_CLASS(ASceneCamera, 3810057830);
 #if USE_COMPILED_IN_NATIVES
 // Cross Module References
+	ENGINE_API class UClass* Z_Construct_UClass_APawn();
 	ENGINE_API class UClass* Z_Construct_UClass_AGameMode();
+	ENGINE_API class UClass* Z_Construct_UClass_ACameraActor();
 
+	BEACONLEAGUE_API class UClass* Z_Construct_UClass_ABall_NoRegister();
+	BEACONLEAGUE_API class UClass* Z_Construct_UClass_ABall();
+	BEACONLEAGUE_API class UClass* Z_Construct_UClass_ABeacon_NoRegister();
+	BEACONLEAGUE_API class UClass* Z_Construct_UClass_ABeacon();
 	BEACONLEAGUE_API class UClass* Z_Construct_UClass_ABeaconLeagueGameMode_NoRegister();
 	BEACONLEAGUE_API class UClass* Z_Construct_UClass_ABeaconLeagueGameMode();
+	BEACONLEAGUE_API class UClass* Z_Construct_UClass_ASceneCamera_NoRegister();
+	BEACONLEAGUE_API class UClass* Z_Construct_UClass_ASceneCamera();
 	BEACONLEAGUE_API class UPackage* Z_Construct_UPackage_BeaconLeague();
+	UClass* Z_Construct_UClass_ABall_NoRegister()
+	{
+		return ABall::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ABall()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APawn();
+			Z_Construct_UPackage_BeaconLeague();
+			OuterClass = ABall::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Ball.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Ball.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ABall(Z_Construct_UClass_ABall, TEXT("ABall"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ABall);
+	UClass* Z_Construct_UClass_ABeacon_NoRegister()
+	{
+		return ABeacon::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ABeacon()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_APawn();
+			Z_Construct_UPackage_BeaconLeague();
+			OuterClass = ABeacon::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Navigation"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("Beacon.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("Beacon.h"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ABeacon(Z_Construct_UClass_ABeacon, TEXT("ABeacon"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ABeacon);
 	UClass* Z_Construct_UClass_ABeaconLeagueGameMode_NoRegister()
 	{
 		return ABeaconLeagueGameMode::StaticClass();
@@ -54,6 +138,39 @@ void EmptyLinkFunctionForGeneratedCodeBeaconLeague() {}
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_ABeaconLeagueGameMode(Z_Construct_UClass_ABeaconLeagueGameMode, TEXT("ABeaconLeagueGameMode"));
 	DEFINE_VTABLE_PTR_HELPER_CTOR(ABeaconLeagueGameMode);
+	UClass* Z_Construct_UClass_ASceneCamera_NoRegister()
+	{
+		return ASceneCamera::StaticClass();
+	}
+	UClass* Z_Construct_UClass_ASceneCamera()
+	{
+		static UClass* OuterClass = NULL;
+		if (!OuterClass)
+		{
+			Z_Construct_UClass_ACameraActor();
+			Z_Construct_UPackage_BeaconLeague();
+			OuterClass = ASceneCamera::StaticClass();
+			if (!(OuterClass->ClassFlags & CLASS_Constructed))
+			{
+				UObjectForceRegistration(OuterClass);
+				OuterClass->ClassFlags |= 0x20900080;
+
+
+				OuterClass->StaticLink();
+#if WITH_METADATA
+				UMetaData* MetaData = OuterClass->GetOutermost()->GetMetaData();
+				MetaData->SetValue(OuterClass, TEXT("HideCategories"), TEXT("Input Rendering"));
+				MetaData->SetValue(OuterClass, TEXT("IncludePath"), TEXT("SceneCamera.h"));
+				MetaData->SetValue(OuterClass, TEXT("ModuleRelativePath"), TEXT("SceneCamera.h"));
+				MetaData->SetValue(OuterClass, TEXT("ShowCategories"), TEXT("Input|MouseInput Input|TouchInput"));
+#endif
+			}
+		}
+		check(OuterClass->GetClass());
+		return OuterClass;
+	}
+	static FCompiledInDefer Z_CompiledInDefer_UClass_ASceneCamera(Z_Construct_UClass_ASceneCamera, TEXT("ASceneCamera"));
+	DEFINE_VTABLE_PTR_HELPER_CTOR(ASceneCamera);
 	UPackage* Z_Construct_UPackage_BeaconLeague()
 	{
 		static UPackage* ReturnPackage = NULL;
@@ -62,8 +179,8 @@ void EmptyLinkFunctionForGeneratedCodeBeaconLeague() {}
 			ReturnPackage = CastChecked<UPackage>(StaticFindObjectFast(UPackage::StaticClass(), NULL, FName(TEXT("/Script/BeaconLeague")), false, false));
 			ReturnPackage->SetPackageFlags(PKG_CompiledIn | 0x00000000);
 			FGuid Guid;
-			Guid.A = 0x80E42BA9;
-			Guid.B = 0xCB0393F8;
+			Guid.A = 0x0142C789;
+			Guid.B = 0x2EB058EB;
 			Guid.C = 0x00000000;
 			Guid.D = 0x00000000;
 			ReturnPackage->SetGuid(Guid);

@@ -5,6 +5,15 @@
 	DO NOT modify this manually! Edit the corresponding .h files instead!
 ===========================================================================*/
 
+#ifndef BEACONLEAGUE_Ball_generated_h
+	#include "Ball.h"
+#endif
+#ifndef BEACONLEAGUE_Beacon_generated_h
+	#include "Beacon.h"
+#endif
 #ifndef BEACONLEAGUE_BeaconLeagueGameMode_generated_h
 	#include "BeaconLeagueGameMode.h"
+#endif
+#ifndef BEACONLEAGUE_SceneCamera_generated_h
+	#include "SceneCamera.h"
 #endif
