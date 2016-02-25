@@ -29,7 +29,6 @@
 *.lib
 *.idb
 *.a
-*.dll
 *.exe
 *.png
 *.bz2
@@ -84,17 +83,3 @@
 # Ignore any saved local files
 /*/Saved/**
 
-# Other binaries
-/.ue4dependencies
-/UnrealTournament/Binaries/**
-!/UnrealTournament/Binaries/DotNET
-!/UnrealTournament/Binaries/DotNET/GitDependencies.*
-/UnrealTournament/Content/**
-!/UnrealTournament/Content/RestrictedAssets
-/UnrealTournament/Content/RestrictedAssets/**
-!/UnrealTournament/Content/RestrictedAssets/Blueprints/**
-/UnrealTournament/Plugins/ContentOnly/Content/**
-/UnrealTournament/Plugins/SampleGameMode/Binaries/**
-/UnrealTournament/Plugins/SampleGameMode/Content/**
-/UnrealTournament/Plugins/SampleMutator/Binaries/**
-/UnrealTournament/Releases/**
