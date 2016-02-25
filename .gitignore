@@ -73,7 +73,7 @@
 /*/DerivedDataCache/**
 
 # Engine intermediates
-/*/Intermediate/**
+**/Intermediate/**
 /*/Plugins/**/Intermediate/**
 
 # NOTE: For now, we'll commit executable binaries too (game DLLs)
