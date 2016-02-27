@@ -12,8 +12,9 @@ UCLASS()
 class BEACONLEAGUE_API ABeaconLeagueGameMode : public AGameMode
 {
 	GENERATED_BODY()
-	
-	
+
+public:
+	ABeaconLeagueGameMode();
 	
 	
 };

@@ -24,6 +24,7 @@
 *.suo
 *.opensdf
 *.sdf
+*.xml
 
 # Standard binary files
 *.lib
@@ -45,6 +46,7 @@
 *.bmp
 *.obj
 *.pdb
+*.opendb
 **/*.framework/**
 
 # Engine binaries
@@ -73,12 +75,12 @@
 
 # Engine intermediates
 **/Intermediate/**
-/*/Plugins/**/Intermediate/**
+**/Plugins/**/Intermediate/**
 
 # NOTE: For now, we'll commit executable binaries too (game DLLs)
 #/*/Binaries/**
 #/*/Plugins/**/Binaries/**
 
 # Ignore any saved local files
-/*/Saved/**
+/Saved/**
 
