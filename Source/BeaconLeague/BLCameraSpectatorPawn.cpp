@@ -2,6 +2,7 @@
 
 #include "BeaconLeague.h"
 #include "BLCameraSpectatorPawn.h"
+#include "BeaconLeagueGameMode.h"
 
 ABLCameraSpectatorPawn::ABLCameraSpectatorPawn(const FObjectInitializer& ObjectInitializer)
 {
@@ -62,6 +63,7 @@ void ABLCameraSpectatorPawn::SetupPlayerInputComponent(class UInputComponent* In
     InputComponent->BindAction("RotateRightByWheel", IE_Pressed, this, &ABLCameraSpectatorPawn::RotateRightByWheel);
     InputComponent->BindAction("RotateUpByWheel", IE_Pressed, this, &ABLCameraSpectatorPawn::RotateUpByWheel);
     InputComponent->BindAction("RotateDownByWheel", IE_Pressed, this, &ABLCameraSpectatorPawn::RotateDownByWheel);
+	InputComponent->BindAction("SpawnBeacon", IE_Pressed, this, &ABLCameraSpectatorPawn::OnMouseClick);
 
     // keyboard move (WASD, Home/End)
     InputComponent->BindAxis("MoveForward", this, &ABLCameraSpectatorPawn::MoveCameraForwardInput);
@@ -223,6 +225,20 @@ void ABLCameraSpectatorPawn::ZoomCameraInInput(float Direction)
     if (!bCanMoveCamera)    return;
 
     ZoomInValue = Direction;
+}
+
+void ABLCameraSpectatorPawn::OnMouseClick()
+{
+	APlayerController* PlayerController = Cast<APlayerController>(GetController());
+	if (PlayerController != nullptr)
+	{
+		FHitResult TraceResult(ForceInit);
+		PlayerController->GetHitResultUnderCursor(ECollisionChannel::ECC_WorldDynamic, false, TraceResult);
+		if (TraceResult.GetActor() != nullptr)
+		{
+			Cast<ABeaconLeagueGameMode>(GetWorld()->GetAuthGameMode())->SpawnBeacon(TraceResult.Location);
+		}
+	}
 }
 
 

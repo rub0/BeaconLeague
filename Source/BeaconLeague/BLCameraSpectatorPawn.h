@@ -112,6 +112,12 @@ public:
 	UFUNCTION()
 	void ZoomCameraInInput(float Direction);
 
+	/** Input recieved to move the camera right
+	* @param direcation - (1.0 for right, -1.0 for left)
+	*/
+	UFUNCTION()
+	void OnMouseClick();
+
 	//---
 
 private:

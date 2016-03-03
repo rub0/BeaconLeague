@@ -16,5 +16,15 @@ class BEACONLEAGUE_API ABeaconLeagueGameMode : public AGameMode
 public:
 	ABeaconLeagueGameMode();
 	
-	
+	void SpawnBeacon(const FVector &position);
+
+
+	/** The class of PlayerController to spawn for players logging in. */
+	UPROPERTY(EditAnywhere, noclear, BlueprintReadOnly, Category=Classes)
+	TSubclassOf<class ABall> BallClass;
+
+	UPROPERTY(EditAnywhere, noclear, BlueprintReadOnly, Category=Classes)
+	TSubclassOf<class ABeacon> BeaconClass;
+
+	UWorld* World;
 };
