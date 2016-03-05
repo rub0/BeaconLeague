@@ -8,7 +8,7 @@
 #include "Ball.h"
 #include "Beacon.h"
 
-ABeaconLeagueGameMode::ABeaconLeagueGameMode()
+ABeaconLeagueGameMode::ABeaconLeagueGameMode(): NnewBeacon(0)
 {
 	PlayerControllerClass = ABeaconController::StaticClass();
 	DefaultPawnClass = ABLCameraSpectatorPawn::StaticClass();
@@ -18,13 +18,47 @@ ABeaconLeagueGameMode::ABeaconLeagueGameMode()
 
 void ABeaconLeagueGameMode::SpawnBeacon(const FVector &position)
 {
-	FVector respos = (position + FVector(0, 0, 5.0f));
+	FVector respos = (position + FVector(0, 0, 20.0f));
 
-	//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("StartTCPReceiver>> Listen socket could not be created! ~> %s"), &BeaconClass));
-	AActor* res = World->SpawnActor(BeaconClass, &respos);
-
-	if (!res)
+	if (BeaconsSpawned.Num() == MAX_BEACONS)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("beacon class not found")));
+
+		TArray<FOverlapResult> overlapResult;
+
+		FCollisionQueryParams oParams(false);
+		oParams.AddIgnoredActor(this);
+
+		FCollisionResponseParams ResponseParam(ECollisionResponse::ECR_Block);
+
+		World->OverlapMulti(overlapResult, respos, FQuat::Identity, ECollisionChannel::ECC_Pawn, FCollisionShape::MakeSphere(50), oParams);
+		
+		if (overlapResult.Num() > 1)
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("no puedes spawnear el beacon ahi! %d "), overlapResult.Num()));
+			
+		}
+		else
+		{
+			BeaconsSpawned[NnewBeacon]->SetActorLocation(respos);
+			NnewBeacon = (NnewBeacon + 1) % MAX_BEACONS;
+		}
+		
+
+
+		//GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("NnewBeacon ~> %d"), NnewBeacon));
 	}
+	else
+	{
+		AActor* newBeacon = World->SpawnActor(BeaconClass, &respos);
+
+		if (newBeacon)
+		{
+			BeaconsSpawned.Add(newBeacon);
+		}
+		else
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("you cannot spawn a beacon there!")));
+		}
+	}
+	
 }

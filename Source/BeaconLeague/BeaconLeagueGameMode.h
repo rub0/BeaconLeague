@@ -16,6 +16,8 @@ class BEACONLEAGUE_API ABeaconLeagueGameMode : public AGameMode
 public:
 	ABeaconLeagueGameMode();
 	
+	static const uint16 MAX_BEACONS = 3;
+
 	void SpawnBeacon(const FVector &position);
 
 
@@ -26,5 +28,8 @@ public:
 	UPROPERTY(EditAnywhere, noclear, BlueprintReadOnly, Category=Classes)
 	TSubclassOf<class ABeacon> BeaconClass;
 
+private:
 	UWorld* World;
+	TArray<AActor*> BeaconsSpawned;
+	uint16 NnewBeacon;
 };
