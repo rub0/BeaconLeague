@@ -7,9 +7,9 @@
     <Property Name="Precompile" Value="False" />
   </Properties>
   <BuildProducts>
-    <BuildProduct Path="$(ProjectDir)\Binaries\Win64\UE4Editor-BeaconLeague-6640.dll" Type="DynamicLibrary" />
-    <BuildProduct Path="$(ProjectDir)\Binaries\Win64\UE4Editor-BeaconLeague-6640.pdb" Type="SymbolFile" />
-    <BuildProduct Path="$(ProjectDir)\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BeaconLeague-6640.lib" Type="ImportLibrary" />
+    <BuildProduct Path="$(ProjectDir)\Binaries\Win64\UE4Editor-BeaconLeague.dll" Type="DynamicLibrary" />
+    <BuildProduct Path="$(ProjectDir)\Binaries\Win64\UE4Editor-BeaconLeague.pdb" Type="SymbolFile" />
+    <BuildProduct Path="$(ProjectDir)\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-BeaconLeague.lib" Type="ImportLibrary" />
   </BuildProducts>
   <RuntimeDependencies />
   <AdditionalProperties />
