@@ -13,7 +13,6 @@ ABeaconLeagueGameMode::ABeaconLeagueGameMode(): NnewBeacon(0)
 	PlayerControllerClass = ABeaconController::StaticClass();
 	DefaultPawnClass = ABLCameraSpectatorPawn::StaticClass();
 	World = GetWorld();
-
 }
 
 void ABeaconLeagueGameMode::SpawnBeacon(const FVector &position)
@@ -32,7 +31,6 @@ void ABeaconLeagueGameMode::SpawnBeacon(const FVector &position)
 	if (overlapResult.Num() > 1)
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Red, FString::Printf(TEXT("no puedes spawnear el beacon ahi! %d "), overlapResult.Num()));
-
 	}
 	else if (BeaconsSpawned.Num() == MAX_BEACONS)
 	{
